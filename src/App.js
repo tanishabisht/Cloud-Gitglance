@@ -1,10 +1,12 @@
-import { SignUp, SignIn } from './pages'
+import { SignUp, SignIn, Recommendation, Liked } from './pages'
 
 function App() {
   return (
     <div className="App">
       {/* <SignUp /> */}
-      <SignIn />
+      {/* <SignIn /> */}
+      {/* <Recommendation /> */}
+      <Liked />
     </div>
   );
 }
