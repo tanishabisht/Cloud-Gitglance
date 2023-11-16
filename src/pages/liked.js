@@ -7,15 +7,12 @@ const datas = [
     {name: 'bdd-cucumber-2', like: true},
     {name: 'bdd-cucumber-4', like: true},
     {name: 'bdd-cucumber-6', like: true},
-    {name: 'bdd-cucumber-4', like: true},
-    {name: 'bdd-cucumber-6', like: true},
-    {name: 'bdd-cucumber-4', like: true},
     {name: 'bdd-cucumber-6', like: true},
 ]
 
 const Liked = () => {
     return (
-        <div className='container'>
+        <div>
             <h1 style={{textAlign:'center', marginTop:'5rem'}}>User's Liked Repositories</h1>
             <Grid container spacing={2}>
                 {datas.map(data => (

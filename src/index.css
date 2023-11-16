@@ -12,11 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.main_container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 70%;
+}
+
 .App {
   min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -53,6 +63,9 @@ code {
   cursor: pointer;
 }
 
-.container {
-  width: 70%;
+
+
+/* NAVBAR */
+.navbar_logo {
+  margin-right: 1rem;
 }

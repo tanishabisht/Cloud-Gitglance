@@ -22,7 +22,7 @@ const datas = [
 
 const Recommendation = () => {
     return (
-        <div className='container'>
+        <div>
             <h1 style={{textAlign:'center', marginTop:'5rem'}}>Recommendations</h1>
             <Grid container spacing={2}>
                 {datas.map(data => (
