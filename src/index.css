@@ -69,3 +69,7 @@ code {
 .navbar_logo {
   margin-right: 1rem;
 }
+
+.active {
+  text-decoration: underline;
+}
