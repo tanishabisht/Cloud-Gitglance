@@ -1,9 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function ButtonAppBar({children}) {
@@ -23,10 +21,10 @@ export default function ButtonAppBar({children}) {
                         </svg>
                     </div>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        GITglance
+                        GitGlance
                     </Typography>
-                    <Button color="inherit" component={Link} to="/recommendation" sx={{ ...(isCurrentPage('/recommendation') && { textDecoration: 'underline' }) }}>Recommendations</Button>
-                    <Button color="inherit" component={Link} to="/liked" sx={{ ...(isCurrentPage('/liked') && { textDecoration: 'underline' }) }}>Liked Repositories</Button>
+                    <Link to="/recommendation" className={isCurrentPage('/recommendation') ? 'nav_active' : 'nav_link'}>Recommendations</Link>
+                    <Link to="/liked" className={isCurrentPage('/liked') ? 'nav_active' : 'nav_link'}>Liked Repositories</Link>
                 </Toolbar>
             </AppBar>
         )}
