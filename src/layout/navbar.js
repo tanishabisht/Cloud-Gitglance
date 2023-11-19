@@ -25,6 +25,7 @@ export default function ButtonAppBar({children}) {
                     </Typography>
                     <Link to="/recommendation" className={isCurrentPage('/recommendation') ? 'nav_active' : 'nav_link'}>Recommendations</Link>
                     <Link to="/liked" className={isCurrentPage('/liked') ? 'nav_active' : 'nav_link'}>Liked Repositories</Link>
+                    <Link to="/signin" className='nav_link'>Logout</Link>
                 </Toolbar>
             </AppBar>
         )}
