@@ -9,6 +9,10 @@ export default function ButtonAppBar({children}) {
     const isCurrentPage = (path) => location.pathname === path;
     const isAuthPage = isCurrentPage('/signin') || isCurrentPage('/signup');
 
+    const handleLogout = () => {
+        window.location.href = "https://gitglance-domain.auth.us-east-1.amazoncognito.com/logout?client_id=b6uqpn9fne55o855e17rbi8dv&logout_uri=https://gitglance-domain.auth.us-east-1.amazoncognito.com/login?client_id=b6uqpn9fne55o855e17rbi8dv&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fd9lvp3ghzkpxt.cloudfront.net%2F";
+    };
+
     return (
         <div>
             {
@@ -25,7 +29,8 @@ export default function ButtonAppBar({children}) {
                     </Typography>
                     <Link to="/recommendation" className={isCurrentPage('/recommendation') ? 'nav_active' : 'nav_link'}>Recommendations</Link>
                     <Link to="/liked" className={isCurrentPage('/liked') ? 'nav_active' : 'nav_link'}>Liked Repositories</Link>
-                    <Link to="/signin" className='nav_link'>Logout</Link>
+            
+                    <Link onClick={handleLogout} className='nav_link'>Logout</Link>
                 </Toolbar>
             </AppBar>
         )}
