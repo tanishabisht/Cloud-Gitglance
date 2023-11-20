@@ -73,6 +73,11 @@ code {
   color: #5E6EF0;
 }
 
+.topic_link {
+  color: #949cd1;
+  font-size: 1.2rem;
+}
+
 /* AUTHENTICATION */
 .auth_container {
   display: flex;
