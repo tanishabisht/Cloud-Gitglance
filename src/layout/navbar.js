@@ -3,14 +3,22 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, useLocation } from 'react-router-dom';
+import { signOut } from 'aws-amplify/auth';
 
 export default function ButtonAppBar({children}) {
     const location = useLocation();
     const isCurrentPage = (path) => location.pathname === path;
     const isAuthPage = isCurrentPage('/signin') || isCurrentPage('/signup');
 
-    const handleLogout = () => {
-        window.location.href = "https://gitglance-domain.auth.us-east-1.amazoncognito.com/logout?client_id=b6uqpn9fne55o855e17rbi8dv&logout_uri=https://gitglance-domain.auth.us-east-1.amazoncognito.com/login?client_id=b6uqpn9fne55o855e17rbi8dv&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fd9lvp3ghzkpxt.cloudfront.net%2F";
+    const handleLogout = async () => {
+        // window.location.href = "https://gitglance-domain.auth.us-east-1.amazoncognito.com/logout?client_id=b6uqpn9fne55o855e17rbi8dv&logout_uri=https://gitglance-domain.auth.us-east-1.amazoncognito.com/login?client_id=b6uqpn9fne55o855e17rbi8dv&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fd9lvp3ghzkpxt.cloudfront.net%2F";
+
+        try {
+            await signOut(); // Sign out the authenticated user
+            // You can also redirect the user to the login page or perform other actions after logout
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
     };
 
     return (
