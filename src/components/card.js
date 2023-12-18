@@ -61,7 +61,7 @@ const CustomCard = ({content}) => {
                 </a>
             </div>
             <br/>
-            <p className='card_like' style={{color}} onClick={likeClickHandler}>Like</p>
+            <p className='card_like' style={{color}} onClick={likeClickHandler}>Like    {content.language[0]}/{content.language[1]}</p>
         </div>
     );
 }
