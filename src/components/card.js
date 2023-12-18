@@ -4,7 +4,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 
 
 const CustomCard = ({content, user, likedRepos}) => {
-
+    const [color, setColor] = useState(content.like ? '#9A2D1E' : '#B4B4B4')
     const linkClickHandler = () => {
         const data = {
             "EVENT_TYPE" : "click",
