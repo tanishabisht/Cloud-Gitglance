@@ -55,7 +55,7 @@ const CustomCard = ({content, user, likedRepos}) => {
         const like_data = {
             user_email: user?.signInDetails?.loginId,
             repo_url: [content.repo_url],
-            action: likedRepos.includes(content.repo_url) ? "unlike" : "like"
+            action: likedRepos?.includes(content.repo_url) ? "unlike" : "like"
         }
         axios.post('https://rwrbehkr47.execute-api.us-east-1.amazonaws.com/update_pref/recordLike', like_data)
         .then(function (response) {
