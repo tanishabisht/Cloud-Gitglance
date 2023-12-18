@@ -1,9 +1,12 @@
 import * as React from 'react';
 import axios from 'axios'
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import { useNavigate } from 'react-router-dom';
 
 
 const CustomCard = ({content, user, likedRepos}) => {
+    const navigate = useNavigate();
+    
 
     const linkClickHandler = () => {
         const data = {
@@ -49,15 +52,15 @@ const CustomCard = ({content, user, likedRepos}) => {
             console.log('error like: ', error);
         });
 
-
         const like_data = {
             user_email: user?.signInDetails?.loginId,
             repo_url: [content.repo_url],
-            action: content.like ? "unlike" : "like"
+            action: likedRepos.includes(content.repo_url) ? "unlike" : "like"
         }
         axios.post('https://rwrbehkr47.execute-api.us-east-1.amazonaws.com/update_pref/recordLike', like_data)
         .then(function (response) {
             console.log('response like: ', response);
+            navigate(0);
         })
         .catch(function (error) {
             console.log('error like: ', error);
