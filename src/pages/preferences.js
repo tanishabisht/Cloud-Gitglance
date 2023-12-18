@@ -20,7 +20,7 @@ const LANGUAGES = [
     'YAML'
 ]
 
-const Preferences = ({ signOut, user }) => {
+const Preferences = ({ user }) => {
     let navigate = useNavigate();
     const [languages, setLanguages] = useState([])
     const [skipIsDisabled, setSkipIsDisabled] = useState(true)
@@ -46,7 +46,7 @@ const Preferences = ({ signOut, user }) => {
         .catch(function (error) {
             console.log('error: ', error);
         })
-    }, [])
+    }, [user])
 
     const updateHandler = () => {
         const data = {
