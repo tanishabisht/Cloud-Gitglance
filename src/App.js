@@ -1,4 +1,4 @@
-import { SignUp, SignIn, Recommendation, Liked, Explore, Preferences } from './pages'
+import { SignUp, SignIn, Recommendation, Liked, Explore, Preferences, Newrepos } from './pages'
 import ButtonAppBar from './layout/navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Amplify } from 'aws-amplify';
@@ -47,6 +47,7 @@ function App() {
           <Route path="/explore" element={<Explore/>}/>
           <Route path="/recommendation" element={<Recommendation />} />
           <Route path="/liked" element={<Liked />} />
+          <Route path="/newrepos" element={<Newrepos/>}/>
           <Route path="/" element={<Preferences />} />
         </Routes>
         </ButtonAppBar>

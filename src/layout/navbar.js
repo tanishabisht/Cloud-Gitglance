@@ -39,6 +39,7 @@ export default function ButtonAppBar({children}) {
                     <Link to="/" className={isCurrentPage('/') ? 'nav_active' : 'nav_link'}>Preferences</Link>
                     <Link to="/liked" className={isCurrentPage('/liked') ? 'nav_active' : 'nav_link'}>Liked Repositories</Link>
                     <Link to="/explore" className={isCurrentPage('/explore') ? 'nav_active' : 'nav_link'}>Explore</Link>
+                    <Link to="/newrepos" className={isCurrentPage('/newrepos') ? 'nav_active' : 'nav_link'}>New Repositories</Link>
                     <Link onClick={handleLogout} className='nav_link'>Logout</Link>
                 </Toolbar>
             </AppBar>
