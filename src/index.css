@@ -107,3 +107,23 @@ code {
 .goto_link {
   color: #5E6EF0;
 }
+
+/* PREFERENCES PAGE */
+.button_group {
+  margin-top: 3rem;
+  display: flex;
+  width: 100%;
+}
+
+.button_group :first-child {
+  margin-right: 1rem;
+}
+
+.preferences_container {
+  height: 90vh;
+}
+
+.preferences_container .container_border_center {
+  min-width: 65%;
+  max-width: 75%;
+}
