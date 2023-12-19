@@ -10,16 +10,16 @@ const Explore = ({user}) => {
     const [exploreRepo, setExploreRepo] = useState([])
     const [likedRepos, setLikedRepos] = useState([])
 
-    useEffect(() => {
-        axios.get('https://rwrbehkr47.execute-api.us-east-1.amazonaws.com/TestStage/api/explore-repositories?userid=45')
-        .then(function (response) {
-            console.log('response: ', response);
-            setExploreRepo(response.data)
-        })
-        .catch(function (error) {
-            console.log('error: ', error);
-        })
-    }, [])
+    // useEffect(() => {
+    //     axios.get('https://rwrbehkr47.execute-api.us-east-1.amazonaws.com/TestStage/api/explore-repositories?userid=45')
+    //     .then(function (response) {
+    //         console.log('response: ', response);
+    //         setExploreRepo(response.data)
+    //     })
+    //     .catch(function (error) {
+    //         console.log('error: ', error);
+    //     })
+    // }, [])
 
     useEffect(() => {
         const data = { user_email: user?.signInDetails?.loginId }
@@ -29,6 +29,15 @@ const Explore = ({user}) => {
                 if(response.data.body === "User found") {
                     console.log(response.data.user_data.liked_repos)
                     setLikedRepos(response.data.user_data.liked_repos)
+                    const user_id = parseInt(response.data.user_data.user_id) + 50
+                    axios.get('https://rwrbehkr47.execute-api.us-east-1.amazonaws.com/update_pref/api/explore-repositories?userid=' + user_id)
+                    .then(function (response) {
+                        console.log('response: ', response);
+                        setExploreRepo(response.data)
+                    })
+                    .catch(function (error) {
+                        console.log('error: ', error);
+                    })
                 }
             })
             .catch(function (error) {
